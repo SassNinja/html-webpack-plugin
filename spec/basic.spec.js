@@ -1220,10 +1220,11 @@ describe('HtmlWebpackPlugin', () => {
 
   it('fires the events in the correct order', done => {
     const hookCallOrder = [
-      'beforeHtmlGeneration',
-      'beforeHtmlProcessing',
+      'beforeAssetTagGeneration',
       'alterAssetTags',
-      'afterHtmlProcessing',
+      'alterAssetTagGroups',
+      'afterTemplateExecution',
+      'beforeEmit',
       'afterEmit'
     ];
     let eventsFired = [];
